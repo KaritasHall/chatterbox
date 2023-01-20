@@ -1,0 +1,81 @@
+[debug] [2023-01-20T14:26:22.243Z] ----------------------------------------------------------------------
+[debug] [2023-01-20T14:26:22.244Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2023-01-20T14:26:22.244Z] CLI Version:   11.20.0
+[debug] [2023-01-20T14:26:22.244Z] Platform:      darwin
+[debug] [2023-01-20T14:26:22.244Z] Node Version:  v16.18.0
+[debug] [2023-01-20T14:26:22.245Z] Time:          Fri Jan 20 2023 14:26:22 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-01-20T14:26:22.245Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-20T14:26:22.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-20T14:26:22.283Z] > authorizing via signed-in user (karitashall@gmail.com)
+[debug] [2023-01-20T14:26:22.283Z] [iam] checking project chatroom-69853 for permissions ["firebase.projects.get"]
+[debug] [2023-01-20T14:26:22.284Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions [none]
+[debug] [2023-01-20T14:26:22.284Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions x-goog-quota-user=projects/chatroom-69853
+[debug] [2023-01-20T14:26:22.284Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-20T14:26:23.160Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions 200
+[debug] [2023-01-20T14:26:23.161Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-20T14:26:23.162Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
+[debug] [2023-01-20T14:26:23.726Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
+[debug] [2023-01-20T14:26:23.726Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_284b6c8e-7777-48e5-87b3-df7a2c542d07"}
+[info] 
+[info] === Serving from '/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox'...
+[info] 
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2023-01-20T14:26:23.744Z] defaultcredentials: writing to file /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json
+[debug] [2023-01-20T14:26:23.744Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatroom-69853/sites 
+[debug] [2023-01-20T14:26:23.748Z] Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-20T14:26:23.748Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig [none]
+[debug] [2023-01-20T14:26:24.110Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig 200
+[debug] [2023-01-20T14:26:24.110Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig {"projectId":"chatroom-69853","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"}
+[debug] [2023-01-20T14:26:24.955Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatroom-69853/sites 200
+[debug] [2023-01-20T14:26:24.955Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatroom-69853/sites {"sites":[{"name":"projects/chatroom-69853/sites/chatroom-69853","defaultUrl":"https://chatroom-69853.web.app","appId":"1:778752590260:web:874fb6b005663a514472e1","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-20T14:26:24.956Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/webApps/1:778752590260:web:874fb6b005663a514472e1/config [none]
+[debug] [2023-01-20T14:26:25.972Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/webApps/1:778752590260:web:874fb6b005663a514472e1/config 200
+[debug] [2023-01-20T14:26:25.972Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/webApps/1:778752590260:web:874fb6b005663a514472e1/config {"projectId":"chatroom-69853","appId":"1:778752590260:web:874fb6b005663a514472e1","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west","apiKey":"AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g","authDomain":"chatroom-69853.firebaseapp.com","messagingSenderId":"778752590260"}
+[debug] [2023-01-20T14:26:25.997Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
+[debug] [2023-01-20T14:26:26.491Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
+[debug] [2023-01-20T14:26:26.491Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_284b6c8e-7777-48e5-87b3-df7a2c542d07"}
+[info] i  functions: Watching "/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions\" for Cloud Functions..."}}
+[info] i  hosting[chatroom-69853]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting[chatroom-69853]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-01-20T14:26:26.576Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2023-01-20T14:26:26.877Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-01-20T14:26:26.877Z] Building nodejs source
+[debug] [2023-01-20T14:26:26.879Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-01-20T14:26:26.973Z] Serving at port 9005
+
+[debug] [2023-01-20T14:26:27.127Z] listening to PORT: 5000
+
+[debug] [2023-01-20T14:26:27.130Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-01-20T14:26:27.133Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
