@@ -23,15 +23,23 @@ const db = getFirestore();
 expressApp.get("/", async (req, res) => {
   const snapshot = await db.collection("messages").get();
 
-  const todoList = snapshot.docs.map((doc) => {
+  const messages = snapshot.docs.map((doc) => {
     return {
       id: doc.id,
       ...doc.data(),
     };
   });
 
-  res.send(todoList);
+  res.send(messages);
 });
+
+
+expressApp.post("/chat", async (req, res) => {
+  // save to firebase, reference is saved as ... reference!
+  const reference = await db.collection("messages").add({
+    name: req.body.message,
+  });
+
 
 // Here we are asking express to handle crud operations and
 // send a response back to the user
