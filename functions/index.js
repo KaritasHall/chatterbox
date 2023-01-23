@@ -1,15 +1,14 @@
 const functions = require("firebase-functions");
 // "firebase-functions" is specifically for Firebase's cloud hosting.
-// Here I am hosting my server in the cloud
+
 const cors = require("cors");
 const express = require("express");
 const expressApp = express();
 const firebaseAdmin = require("firebase-admin");
 /* firebaseAdmin is kind of like PgAdmin*/
-// a ton of options, including hosting (which I ended up using in this project)
+
 const bodyParser = require("body-parser");
 const { getFirestore } = require("firebase-admin/firestore");
-const PORT = 5000;
 
 // Middlewares
 expressApp.use(cors({ methods: ["GET", "POST", "PUT", "DELETE"] }));
@@ -18,7 +17,7 @@ expressApp.use(bodyParser.json());
 // Firebase app initialization
 firebaseAdmin.initializeApp();
 
-// Database reference. Firestore is the actual database, included in Firebase
+// Database reference
 const db = getFirestore();
 
 expressApp.get("/", async (req, res) => {
@@ -34,8 +33,16 @@ expressApp.get("/", async (req, res) => {
   res.send(todoList);
 });
 
-expressApp.listen(PORT, () => {
-  //listen to the port we chose above
-  //print to the console that the server is listening
-  console.log("listening to PORT: " + PORT);
-});
+// Here we are asking express to handle crud operations and
+// send a response back to the user
+exports.app = functions.https.onRequest(expressApp);
+
+// Firebase is controlling the port etc. behind the scenes.
+// You can think of Firebase as the bouncer of a club,
+// while express greets the guests and shows them to their seat
+
+// Use "npm run local" to fire up server locally
+// Url for local server:
+// http://localhost:5000/chatroom-69853/us-central1/app
+// Url for cloud server:
+// https://us-central1-chatroom-69853.cloudfunctions.net/app

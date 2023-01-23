@@ -1,7 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import getServerUrl from "./config";
 
 function App() {
+  // DON'T ERASE THIS LINE
+  // this is the server url (see config.js)
+  const url = getServerUrl();
+
   return (
     <div className="App">
       <header className="App-header">
