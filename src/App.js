@@ -31,6 +31,8 @@ function App() {
 
   const [text, setText] = useState("");
 
+  let inputField = document.getElementById('inputField')
+
   const sendMsg = () => {
     setMessage([...message, {id:message.length, name:text}])
     const bodyData = {
@@ -46,9 +48,19 @@ function App() {
     )
       .then((r)=>r.json())
       .then(console.log);
+      inputField.value = ""
   }
 
 
+  let sendBtn = document.getElementById('sendBtn')  
+
+  function handleKeyPress(e) {
+    console.log(e)
+    var key = e.key;
+    if (key === "Enter") {
+      sendBtn.click();
+    }
+  }
 
 
 
@@ -76,8 +88,8 @@ function App() {
           )
         })}
       </div>
-      <input onChange={(e)=>setText(e.target.value)}></input>
-      <button onClick={sendMsg}>Send</button>
+      <input id="inputField" onChange={(e)=>setText(e.target.value)} onKeyPress={(e) => handleKeyPress(e)}></input>
+      <button id="sendBtn" onClick={sendMsg}>Send</button>
     </div>
   );
 }
