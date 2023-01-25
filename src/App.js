@@ -15,6 +15,7 @@ function App() {
   // this is the server url (see config.js)
   const url = getServerUrl();
 
+  //Fetching existing messages from database with GET method
   const [message, setMessage] = useState([]);
 
   useEffect(() =>{
@@ -28,7 +29,7 @@ function App() {
   }
 ,[])
 
-
+//Adding a new messge with post method
   const [text, setText] = useState("");
 
   let inputField = document.getElementById('inputField')
@@ -51,7 +52,7 @@ function App() {
       inputField.value = ""
   }
 
-
+  //This makes the enter btn press send - on keypress and handekeypress is also on the input field so they communicate 
   let sendBtn = document.getElementById('sendBtn')  
 
   function handleKeyPress(e) {
@@ -62,6 +63,16 @@ function App() {
     }
   }
 
+  //Deleting messages
+  function deleteMsg(id) {
+    fetch(
+      url + "id", {
+        method: "DELETE"
+      }
+    )
+    .then((r)=>r.json())
+    .then(console.log);
+  }
 
 
   // Commands required for auth. firebase
