@@ -56,7 +56,7 @@ expressApp.delete("/chat/:id", async (req, res) => {
   console.log("this is the right time", reference);
   // This error handling neeeds to be fixed!
   if (reference) {
-    res.send("Message deleted!");
+    res.send({message:"Message deleted!"});
   } else {
     res.status(500).send("Failed to delete");
   }
