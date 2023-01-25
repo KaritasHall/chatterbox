@@ -64,9 +64,12 @@ function App() {
   }
 
   //Deleting messages
-  function deleteMsg(id) {
+  function deleteMsg(id, i) {
+    const msg=[...message]
+    msg.splice(i,1)
+    setMessage(msg)
     fetch(
-      url + "id", {
+      url + "chat/"+id , {
         method: "DELETE"
       }
     )
@@ -93,16 +96,20 @@ function App() {
   return (
     <div className="App">
       <div>
-        {message.map((chatMessage) => { 
+        {message.map((chatMessage, i) => { 
           return (
-            <div key={chatMessage.id}><p>{chatMessage.name}</p></div>
-            <button>Delete</button>
-          )
-        })}
+            <div>
+              <div key={chatMessage.id}><p>{chatMessage.name}</p></div>
+              <button onClick={() => deleteMsg(chatMessage.id, i)}>Delete</button>
+            </div>
+            )
+          })}
+    
       </div>
-      <input id="inputField" onChange={(e)=>setText(e.target.value)} onKeyPress={(e) => handleKeyPress(e)}></input>
-      <button id="sendBtn" onClick={sendMsg}>Send</button>
+        <input id="inputField" onChange={(e)=>setText(e.target.value)} onKeyPress={(e) => handleKeyPress(e)}></input>
+        <button id="sendBtn" onClick={sendMsg}>Send</button>
     </div>
+    
   );
 }
 
