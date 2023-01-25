@@ -96,6 +96,7 @@ function App() {
         {message.map((chatMessage) => { 
           return (
             <div key={chatMessage.id}><p>{chatMessage.name}</p></div>
+            <button>Delete</button>
           )
         })}
       </div>
