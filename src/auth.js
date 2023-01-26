@@ -6,7 +6,7 @@ import 'firebase/compat/firestore';
 import { initializeApp } from 'firebase/app';
 import * as firebaseui from "firebaseui";
 
-
+//Login is the prop with the use state in app.js
 export default function Auth({login}) {
 
 
@@ -35,6 +35,7 @@ export default function Auth({login}) {
         // User successfully signed in.
         // Return type determines whether we continue the redirect automatically
         // or whether we leave that to developer to handle.
+        //Here we're changing the state to true so when the user is logged in they get sent to chat 
         login(true)
         return true;
       },
