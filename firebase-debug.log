@@ -2367,3 +2367,42 @@ SyntaxError: Unexpected number
 [debug] [2023-01-26T15:51:52.268Z] shutdown requested via /__/quitquitquit
 
 [info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[debug] [2023-01-26T16:26:03.241Z] ----------------------------------------------------------------------
+[debug] [2023-01-26T16:26:03.242Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2023-01-26T16:26:03.242Z] CLI Version:   11.20.0
+[debug] [2023-01-26T16:26:03.242Z] Platform:      darwin
+[debug] [2023-01-26T16:26:03.242Z] Node Version:  v16.18.0
+[debug] [2023-01-26T16:26:03.243Z] Time:          Thu Jan 26 2023 16:26:03 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-01-26T16:26:03.243Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-26T16:26:03.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-26T16:26:03.283Z] > authorizing via signed-in user (karitashall@gmail.com)
+[debug] [2023-01-26T16:26:03.283Z] [iam] checking project chatroom-69853 for permissions ["firebase.projects.get"]
+[debug] [2023-01-26T16:26:03.284Z] > refreshing access token with scopes: []
+[debug] [2023-01-26T16:26:03.284Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-01-26T16:26:03.284Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-26T16:26:03.513Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-01-26T16:26:03.513Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-01-26T16:26:03.558Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions [none]
+[debug] [2023-01-26T16:26:03.558Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions x-goog-quota-user=projects/chatroom-69853
+[debug] [2023-01-26T16:26:03.559Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-26T16:26:04.006Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions 200
+[debug] [2023-01-26T16:26:04.006Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-26T16:26:04.008Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
+[debug] [2023-01-26T16:26:04.388Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
+[debug] [2023-01-26T16:26:04.389Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_80c06286-b24c-4e77-a0dd-ab3190e79ea4"}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2023-01-26T16:26:04.404Z] defaultcredentials: writing to file /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json
+[debug] [2023-01-26T16:26:04.406Z] Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-26T16:26:04.407Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig [none]
+[debug] [2023-01-26T16:26:04.781Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig 200
+[debug] [2023-01-26T16:26:04.781Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig {"projectId":"chatroom-69853","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"}
+[debug] [2023-01-26T16:26:04.815Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5000
+    at Server.setupListenHandle [as _listen2] (node:net:1463:16)
+    at listenInCluster (node:net:1511:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:1660:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[info] i  functions: Watching "/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions\" for Cloud Functions..."}}
+[debug] [2023-01-26T16:26:04.824Z] Validating nodejs source
