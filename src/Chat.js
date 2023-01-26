@@ -26,6 +26,7 @@ export default function Chat() {
   const [text, setText] = useState("");
 
   let inputField = document.getElementById('inputField')
+  let editField = document.getElementById('editField')
 
   const sendMsg = () => {
     setMessage([...message, {id:message.length, name:text}])
@@ -71,8 +72,11 @@ export default function Chat() {
     .then(console.log);
   }
 
-
-  function editMsg(e, id) {
+//Editing messages
+  function editMsg(e, id, i) {
+    const edit=[...message]
+    edit[i]={id, name:text}
+    setMessage(edit)
     const bodyData = {
       message: text, id
     }
@@ -86,6 +90,7 @@ export default function Chat() {
     )
       .then((r)=>r.json())
       .then(console.log);
+      editField.value = ""
   }
 
   const [showForm, setshowForm] = useState({})
@@ -95,13 +100,13 @@ export default function Chat() {
       <div>
         {message.map((chatMessage, i) => { 
           return (
-            <div>
-              <div key={chatMessage.id}><p>{chatMessage.name}</p></div>
+            <div key={chatMessage.id} >
+              <div ><p>{chatMessage.name}</p></div>
               <button onClick={() => deleteMsg(chatMessage.id, i)}>Delete</button>
 
-              <button onClick={() => setshowForm({...showForm,[message.id]:!showForm[message.id]})}>Edit</button>
-              <div>{showForm[message.id]?<div><input onChange={(e) => setText(e.target.value)} id={message.id}>
-                </input><button onClick={(e) => editMsg(e,chatMessage.id)}>Save</button></div>:null}</div>
+              <button onClick={() => setshowForm({...showForm,[chatMessage.id]:!showForm[chatMessage.id]})}>Edit</button>
+              <div>{showForm[chatMessage.id]?<div><input id="editField" onChange={(e) => setText(e.target.value)}>
+                </input><button onClick={(e) => editMsg(e,chatMessage.id, i)}>Save</button></div>:null}</div>
 
             </div>
             )
