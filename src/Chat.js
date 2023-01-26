@@ -62,13 +62,33 @@ export default function Chat() {
     msg.splice(i,1)
     setMessage(msg)
     fetch(
-      url + "chat/"+id , {
+      url + "chat/"+id , 
+      {
         method: "DELETE"
       }
     )
     .then((r)=>r.json())
     .then(console.log);
   }
+
+
+  function editMsg(e, id) {
+    const bodyData = {
+      message: text, id
+    }
+    fetch(
+      url + "chat/" +id,
+      {
+        method:"PUT",
+        body: JSON.stringify(bodyData),
+        headers:{ 'content-type':'application/json', 'accept':'application/json' } 
+      }
+    )
+      .then((r)=>r.json())
+      .then(console.log);
+  }
+
+  const [showForm, setshowForm] = useState({})
 
   return(
     <div>
@@ -78,6 +98,11 @@ export default function Chat() {
             <div>
               <div key={chatMessage.id}><p>{chatMessage.name}</p></div>
               <button onClick={() => deleteMsg(chatMessage.id, i)}>Delete</button>
+
+              <button onClick={() => setshowForm({...showForm,[message.id]:!showForm[message.id]})}>Edit</button>
+              <div>{showForm[message.id]?<div><input onChange={(e) => setText(e.target.value)} id={message.id}>
+                </input><button onClick={(e) => editMsg(e,chatMessage.id)}>Save</button></div>:null}</div>
+
             </div>
             )
           })}
