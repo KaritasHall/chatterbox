@@ -1,4 +1,5 @@
 const functions = require("firebase-functions");
+require ('dotenv').config();
 // "firebase-functions" is specifically for Firebase's cloud hosting.
 
 const cors = require("cors");
