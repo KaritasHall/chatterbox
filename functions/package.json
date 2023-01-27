@@ -8,7 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "local": "firebase serve --only functions"
+    "local": "firebase serve --only functions --port 5001"
   },
   "engines": {
     "node": "16"
