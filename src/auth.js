@@ -5,13 +5,16 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import { initializeApp } from "firebase/app";
 import * as firebaseui from "firebaseui";
-import "dotenv"
+
 
 //Login is the prop with the use state in app.js
 export default function Auth({ login }) {
+    const x=process.env.SECRET_KEY
+    console.log(x)
+    console.log(process.env)
   // TODO: Replace the following with your app's Firebase project configuration
   const firebaseConfig = {
-    apiKey: process.env.SECRET_KEY,
+    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
     authDomain: "chatroom-69853.firebaseapp.com",
     databaseURL:
       "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
