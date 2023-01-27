@@ -1,5 +1,5 @@
 const functions = require("firebase-functions");
-require ('dotenv').config();
+require("dotenv").config();
 // "firebase-functions" is specifically for Firebase's cloud hosting.
 
 const cors = require("cors");
@@ -66,7 +66,7 @@ expressApp.post("/chat", async (req, res) => {
       });
     }
   } catch (error) {
-    console.log("post /", error);
+    console.log("post /chat", error);
     res.send(500, "Server error");
   }
 });
@@ -84,7 +84,7 @@ expressApp.delete("/chat/:id", async (req, res) => {
       res.status(404).send("chat not found");
     }
   } catch (error) {
-    console.log("delete /", error);
+    console.log("delete /chat/:id", error);
     res.send(500, "Server error");
   }
 });
@@ -118,7 +118,27 @@ expressApp.put("/chat/:id", async (req, res) => {
       }
     }
   } catch (error) {
-    console.log("delete /", error);
+    console.log("put /chat/:id", error);
+    res.send(500, "Server error");
+  }
+});
+
+// GET random cat fact
+expressApp.get("/cats", async (req, res) => {
+  try {
+    // First we get the record
+    const snapshot = await db.collection("cats").get();
+    // map through collection and get message by id and other properties
+    const messages = snapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+
+    res.send(messages);
+  } catch (error) {
+    console.log("get /", error);
     res.send(500, "Server error");
   }
 });

@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "local": "firebase serve --only functions"
+    "local": "firebase serve --only functions --port 5001"
   },
   "eslintConfig": {
     "extends": [
