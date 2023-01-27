@@ -30,6 +30,7 @@ expressApp.get("/", async (req, res) => {
     const messages = snapshot.docs.map((doc) => {
       return {
         id: doc.id,
+        createdAt: doc.createTime,
         ...doc.data(),
       };
     });
