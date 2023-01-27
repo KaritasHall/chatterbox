@@ -74,6 +74,7 @@ export default function Chat() {
 
 //Editing messages
   function editMsg(e, id, i) {
+    setshowForm({...showForm,[id]:!showForm[id]})
     const edit=[...message]
     edit[i]={id, name:text}
     setMessage(edit)
@@ -94,6 +95,8 @@ export default function Chat() {
   }
 
   const [showForm, setshowForm] = useState({})
+
+  
 
   return(
     <div>
