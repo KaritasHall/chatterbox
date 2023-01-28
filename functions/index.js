@@ -30,12 +30,13 @@ expressApp.get("/", async (req, res) => {
     const messages = snapshot.docs.map((doc) => {
       return {
         id: doc.id,
-        createdAt: doc.createTime,
+        createdAt: doc.createTime.seconds,
         ...doc.data(),
       };
     });
-
-    res.send(messages);
+    // Sorting message by time created
+    const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt);
+    res.send(sortedMessages);
   } catch (error) {
     console.log("get /", error);
     res.send(500, "Server error");
@@ -144,7 +145,6 @@ expressApp.get("/cats", async (req, res) => {
   }
 });
 
-
 // This is a code we can use for letting people chat through the chatterbox but we dont know how to implement it right now so we're just keeping it here for future use
 // The link: https://firebase.google.com/docs/firestore/query-data/listen#node.js
 
@@ -157,7 +157,6 @@ expressApp.get("/cats", async (req, res) => {
 //   console.log(`Encountered error: ${err}`);
 // });
 
-  
 // Here we are asking express to handle crud operations and
 // send a response back to the user
 exports.app = functions.https.onRequest(expressApp);
