@@ -1,0 +1,95 @@
+.mdl-js {
+    background-color: #232323;
+    color: #232323;
+}
+
+.box {
+    background-color: #232323;
+    height: 640px;
+    width: 430px;
+    position: absolute;
+    margin: auto;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#firebaseui-auth-container {
+    padding-top: 20px;
+    float: left;
+}
+
+.firebaseui-title {
+    text-align: left;
+    color: white;
+}
+
+.firebaseui-card-content {
+    background-color: blue;
+}
+
+.firebaseui-relative-wrapper {
+    color: red;
+}
+
+#ui-sign-in-email-input {
+    background-color: #4DDFA3;
+    color: red;
+    width: 200px;
+    padding: 20px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.secondbox {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.firebaseui-button {
+    position: absolute;
+    margin: auto;
+    text-align: left;
+    border: none;
+    color:#888888;
+    cursor: pointer;
+    background-color: #232323;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 0px;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.firebaseui-button:focus {
+    color: #171e29;   
+}
+
+.firebaseui-button:hover {
+    color: #4DDFA3;
+}
+
+.firebaseui-button:active {
+    color: #4DDFA3;
+}
+
+@media (min-width: 768px) {
+    .firebaseui-button {
+    min-width: 170px;
+    }
+}
