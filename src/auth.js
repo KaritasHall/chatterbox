@@ -63,17 +63,15 @@ export default function Auth({ login }) {
 
   
   return (
-    <div className="mainbox">
       <div className="box">
 
         <h1>Tskóli Terminal</h1>
 
-        <div className="secondbox">
+        <div className="innerbox">
           <div id="firebaseui-auth-container"></div>
           <div id="loader">Loading...</div>
         </div>
 
       </div>
-    </div>
   );
 }
