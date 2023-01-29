@@ -1,5 +1,6 @@
 import getServerUrl from "./config";
 import { useState, useEffect } from "react";
+import CatFacts from "./catfacts";
 
 export default function Chat() {
   // DON'T ERASE THIS LINE
@@ -27,7 +28,6 @@ export default function Chat() {
       clearInterval(intervalId);
     };
   }, [url]);
-
   //Adding a new messge with post method
   const [text, setText] = useState("");
 
@@ -140,6 +140,7 @@ export default function Chat() {
           );
         })}
       </div>
+
       <input
         id="inputField"
         onChange={(e) => setText(e.target.value)}
@@ -148,6 +149,8 @@ export default function Chat() {
       <button id="sendBtn" onClick={sendMsg}>
         Send
       </button>
+
+      <CatFacts />
     </div>
   );
 }
