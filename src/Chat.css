@@ -1,0 +1,146 @@
+body{
+    background-color: #232323;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Would be cool to have the logo here also if we have time not nessicery */
+.tterminal{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(130, 130, 130);
+
+}
+.messagecontainer{
+width: 80%;
+height: auto;
+margin-top: 1rem;
+margin-right: 4rem;
+margin-left: 4rem;
+margin-bottom: 1rem;
+padding: 2rem;
+justify-content: center;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.messagetxt{
+    color: white;
+}
+
+.inputfield{
+    color: rgb(133, 133, 133);
+    font-size: 16px;
+    width: 329px;
+    height: 20px;
+    text-decoration: none;
+    border: solid 1px #06f;
+}
+
+#inputField{
+    height: 38px;
+}
+
+.deletebtn, .editbtn {
+    /* færa til hægri ? */
+    font-size: 12px;
+    cursor: 'pointer';
+    background-color: #232323;
+    border: none;
+    color: rgb(163, 163, 163);
+    justify-content:flex-start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sending{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#sendBtn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #232323;
+    border: 2px solid white;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 38px;
+    width: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+    touch-action: manipulation;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+.catbtn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #232323;
+    border: 2px solid white;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 38px;
+    width: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+    touch-action: manipulation;
+}
+
+.savebtn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #232323;
+    border: 2px solid white;
+    box-sizing: border-box;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+    touch-action: manipulation;
+    margin-left: 3px;
+}
+#sendBtn:focus {
+    color: #171e29;
+    }
+    #sendBtn:hover {
+    border-color: #06f;
+    color: #06f;
+    }
+    #sendBtn:active {
+    border-color: #06f;
+    color: #06f;
+    }
+
+.catbtn:focus {
+    color: #171e29;
+    }
+    .catbtn:hover {
+    border-color: #06f;
+    color: #06f;
+    }
+    .catbtn:active {
+    border-color: #06f;
+    color: #06f;
+    }
+
+.savebtn:focus {
+    color: #171e29;
+    }
+    .savebtn:hover {
+    border-color: #06f;
+    color: #06f;
+    }
+    .savebtn:active {
+    border-color: #06f;
+    color: #06f;
+        }
+        
+     
+

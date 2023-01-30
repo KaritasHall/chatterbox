@@ -1,3 +1,4 @@
+import "./Chat.css";
 import getServerUrl from "./config";
 import { useState, useEffect } from "react";
 import CatFacts from "./catfacts";
@@ -120,19 +121,21 @@ export default function Chat() {
   const [showForm, setshowForm] = useState({});
 
   return (
-    <div>
-      <div>
+    
+    <div className="maincontainer">
+      <h1 className="tterminal">Tskóli Terminal</h1>
+      <div className="messagecontainer">
         {message.map((chatMessage, i) => {
           return (
             <div key={chatMessage.id}>
               <div>
-                <p>{chatMessage.name}</p>
+                <p className="messagetxt">{chatMessage.name}</p>
               </div>
-              <button onClick={() => deleteMsg(chatMessage.id, i)}>
+              <button className="deletebtn" onClick={() => deleteMsg(chatMessage.id, i)}>
                 Delete
               </button>
 
-              <button
+              <button className="editbtn"
                 onClick={() =>
                   setshowForm({
                     ...showForm,
@@ -145,11 +148,11 @@ export default function Chat() {
               <div>
                 {showForm[chatMessage.id] ? (
                   <div>
-                    <input
+                    <input className="inputfield"
                       id="editField"
                       onChange={(e) => setText(e.target.value)}
                     ></input>
-                    <button onClick={(e) => editMsg(e, chatMessage.id, i)}>
+                    <button className="savebtn" onClick={(e) => editMsg(e, chatMessage.id, i)}>
                       Save
                     </button>
                   </div>
@@ -160,7 +163,8 @@ export default function Chat() {
         })}
       </div>
 
-      <input
+      <div className="sending">
+      <input className="inputfield"
         id="inputField"
         onChange={(e) => setText(e.target.value)}
         onKeyPress={(e) => handleKeyPress(e)}
@@ -170,6 +174,7 @@ export default function Chat() {
       </button>
 
       <CatFacts />
+      </div>
     </div>
   );
 }
