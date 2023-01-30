@@ -8,5 +8,5 @@ export default function CatFacts() {
     await fetch(url + "cats");
   }, [url]);
 
-  return <button onClick={getCats}>Post random cat fact!</button>;
+  return <button className="catbtn" onClick={getCats}>Post random cat fact!</button>;
 }
