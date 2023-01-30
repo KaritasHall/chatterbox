@@ -1,33 +1,31 @@
-[debug] [2023-01-27T12:04:11.311Z] ----------------------------------------------------------------------
-[debug] [2023-01-27T12:04:11.312Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions --port 5001
-[debug] [2023-01-27T12:04:11.312Z] CLI Version:   11.20.0
-[debug] [2023-01-27T12:04:11.312Z] Platform:      darwin
-[debug] [2023-01-27T12:04:11.312Z] Node Version:  v16.18.0
-[debug] [2023-01-27T12:04:11.313Z] Time:          Fri Jan 27 2023 12:04:11 GMT+0000 (Greenwich Mean Time)
-[debug] [2023-01-27T12:04:11.313Z] ----------------------------------------------------------------------
+[debug] [2023-01-28T22:51:43.303Z] ----------------------------------------------------------------------
+[debug] [2023-01-28T22:51:43.304Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2023-01-28T22:51:43.304Z] CLI Version:   11.21.0
+[debug] [2023-01-28T22:51:43.304Z] Platform:      darwin
+[debug] [2023-01-28T22:51:43.304Z] Node Version:  v16.17.0
+[debug] [2023-01-28T22:51:43.309Z] Time:          Sat Jan 28 2023 22:51:43 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-01-28T22:51:43.309Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-01-27T12:04:11.352Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-01-27T12:04:11.352Z] > authorizing via signed-in user (karitashall@gmail.com)
-[debug] [2023-01-27T12:04:11.352Z] [iam] checking project chatroom-69853 for permissions ["firebase.projects.get"]
-[debug] [2023-01-27T12:04:11.353Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions [none]
-[debug] [2023-01-27T12:04:11.353Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions x-goog-quota-user=projects/chatroom-69853
-[debug] [2023-01-27T12:04:11.353Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2023-01-27T12:04:11.653Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions 200
-[debug] [2023-01-27T12:04:11.653Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2023-01-27T12:04:11.655Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
-[debug] [2023-01-27T12:04:12.033Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
-[debug] [2023-01-27T12:04:12.033Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_819e652a-8678-48f2-9918-8d020b3986b8"}
+[debug] [2023-01-28T22:51:43.354Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-28T22:51:43.354Z] > authorizing via signed-in user (victoriathorkels@gmail.com)
+[debug] [2023-01-28T22:51:43.354Z] [iam] checking project chatroom-69853 for permissions ["firebase.projects.get"]
+[debug] [2023-01-28T22:51:43.355Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions [none]
+[debug] [2023-01-28T22:51:43.355Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions x-goog-quota-user=projects/chatroom-69853
+[debug] [2023-01-28T22:51:43.355Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-28T22:51:44.074Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions 200
+[debug] [2023-01-28T22:51:44.074Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-28T22:51:44.075Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
+[debug] [2023-01-28T22:51:44.428Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
+[debug] [2023-01-28T22:51:44.428Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_8c1d6836-a22e-48fd-9a13-0373b73063cb"}
 [info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
-[debug] [2023-01-27T12:04:12.042Z] defaultcredentials: writing to file /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json
-[debug] [2023-01-27T12:04:12.044Z] Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/karit/.config/firebase/karitashall_gmail_com_application_default_credentials.json"}}
-[debug] [2023-01-27T12:04:12.045Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig [none]
-[debug] [2023-01-27T12:04:12.418Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig 200
-[debug] [2023-01-27T12:04:12.418Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig {"projectId":"chatroom-69853","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"}
-[info] i  functions: Watching "/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions\" for Cloud Functions..."}}
-[debug] [2023-01-27T12:04:12.460Z] Validating nodejs source
-[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
-[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
-[debug] [2023-01-27T12:04:12.839Z] > [functions] package.json contents: {
+[debug] [2023-01-28T22:51:44.443Z] defaultcredentials: writing to file /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json
+[debug] [2023-01-28T22:51:44.445Z] Setting GAC to /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-28T22:51:44.446Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig [none]
+[debug] [2023-01-28T22:51:44.790Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig 200
+[debug] [2023-01-28T22:51:44.790Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig {"projectId":"chatroom-69853","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"}
+[info] i  functions: Watching "/Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions\" for Cloud Functions..."}}
+[debug] [2023-01-28T22:51:44.813Z] Validating nodejs source
+[debug] [2023-01-28T22:51:45.171Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -55,42 +53,108 @@
   },
   "private": true
 }
-[debug] [2023-01-27T12:04:12.839Z] Building nodejs source
-[debug] [2023-01-27T12:04:12.840Z] Could not find functions.yaml. Must use http discovery
-[debug] [2023-01-27T12:04:12.934Z] Serving at port 9005
+[debug] [2023-01-28T22:51:45.171Z] Building nodejs source
+[debug] [2023-01-28T22:51:45.172Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-01-28T22:51:45.281Z] Serving at port 9005
 
-[debug] [2023-01-27T12:04:12.974Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
-[debug] [2023-01-27T12:04:12.978Z] shutdown requested via /__/quitquitquit
+[debug] [2023-01-28T22:51:45.291Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'
+Require stack:
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js
+[debug] [2023-01-28T22:51:45.292Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module 'firebase-a ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'\nRequire stack:\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module 'firebase-a ... \n                                         ^"}
+[debug] [2023-01-28T22:51:45.294Z] shutdown requested via /__/quitquitquit
 
-[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
-[info] ✔  functions[us-central1-app]: http function initialized (http://localhost:5001/chatroom-69853/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/chatroom-69853/us-central1/app)."}}
-[debug] [2023-01-27T12:19:28.679Z] [work-queue] {"queuedWork":["/chatroom-69853/us-central1/app/cats-2023-01-27T12:19:28.679Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
-[debug] [2023-01-27T12:19:28.680Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/chatroom-69853/us-central1/app/cats-2023-01-27T12:19:28.679Z"],"workRunningCount":1}
-[debug] [2023-01-27T12:19:28.681Z] Accepted request GET /chatroom-69853/us-central1/app/cats --> us-central1-app
-[debug] [2023-01-27T12:19:28.686Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
-[debug] [2023-01-27T12:19:28.687Z] [functions] Got req.url=/chatroom-69853/us-central1/app/cats, mapping to path=/cats {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/chatroom-69853/us-central1/app/cats, mapping to path=/cats"}}
-[debug] [2023-01-27T12:19:28.698Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
-[debug] [2023-01-27T12:19:28.698Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
-[debug] [2023-01-27T12:19:29.185Z] [runtime-status] [89947] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.185Z] [runtime-status] [89947] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.185Z] [runtime-status] [89947] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
-[debug] [2023-01-27T12:19:29.185Z] [runtime-status] [89947] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.206Z] [runtime-status] [89947] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Checked functions.config() {\"config\":{}}"}}
-[debug] [2023-01-27T12:19:29.206Z] [runtime-status] [89947] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.24.1","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
-[debug] [2023-01-27T12:19:29.206Z] [runtime-status] [89947] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.206Z] [runtime-status] [89947] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.207Z] [runtime-status] [89947] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-functions/lib/index.js\"}"}}
-[debug] [2023-01-27T12:19:29.207Z] [runtime-status] [89947] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
-[debug] [2023-01-27T12:19:29.266Z] [runtime-status] [89947] initializeApp(DEFAULT) {"storageBucket":"chatroom-69853.appspot.com","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","projectId":"chatroom-69853"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] initializeApp(DEFAULT) {\"storageBucket\":\"chatroom-69853.appspot.com\",\"databaseURL\":\"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app\",\"projectId\":\"chatroom-69853\"}"}}
-[debug] [2023-01-27T12:19:29.268Z] [runtime-status] [89947] Functions runtime initialized. {"cwd":"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions","node_version":"16.18.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Functions runtime initialized. {\"cwd\":\"/Users/karit/Desktop/Vor 2023/Module 5/group-project/chatterbox/functions\",\"node_version\":\"16.18.0\"}"}}
-[debug] [2023-01-27T12:19:29.269Z] [runtime-status] [89947] Listening to port: /var/folders/y1/2kn99b5s1q75dkydcfqvw4yr0000gn/T/fire_emu_280d20a1747a1940.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [89947] Listening to port: /var/folders/y1/2kn99b5s1q75dkydcfqvw4yr0000gn/T/fire_emu_280d20a1747a1940.sock"}}
-[debug] [2023-01-27T12:19:29.309Z] [worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: IDLE"}}
-[debug] [2023-01-27T12:19:29.309Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
-[debug] [2023-01-27T12:19:29.311Z] [worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: BUSY"}}
-[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
-[warn] ⚠  Google API requested!
-   - URL: "https://oauth2.googleapis.com/token"
-   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Google API requested!\n   - URL: \"https://oauth2.googleapis.com/token\"\n   - Be careful, this may be a production service."}}
-[debug] [2023-01-27T12:19:30.057Z] [worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-361e92e4-9379-49a7-8ce9-1eb2d425d7c5]: IDLE"}}
-[debug] [2023-01-27T12:19:30.058Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
-[info] i  functions: Finished "app" in 743.669333ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 743.669333ms"}}
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'
+Require stack:
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'\nRequire stack:\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js"}}
+[debug] [2023-01-28T22:54:25.557Z] ----------------------------------------------------------------------
+[debug] [2023-01-28T22:54:25.558Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2023-01-28T22:54:25.558Z] CLI Version:   11.21.0
+[debug] [2023-01-28T22:54:25.558Z] Platform:      darwin
+[debug] [2023-01-28T22:54:25.558Z] Node Version:  v16.17.0
+[debug] [2023-01-28T22:54:25.561Z] Time:          Sat Jan 28 2023 22:54:25 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-01-28T22:54:25.561Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-28T22:54:25.604Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-28T22:54:25.604Z] > authorizing via signed-in user (victoriathorkels@gmail.com)
+[debug] [2023-01-28T22:54:25.604Z] [iam] checking project chatroom-69853 for permissions ["firebase.projects.get"]
+[debug] [2023-01-28T22:54:25.605Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions [none]
+[debug] [2023-01-28T22:54:25.605Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions x-goog-quota-user=projects/chatroom-69853
+[debug] [2023-01-28T22:54:25.605Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-28T22:54:26.338Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions 200
+[debug] [2023-01-28T22:54:26.338Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatroom-69853:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-01-28T22:54:26.340Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 [none]
+[debug] [2023-01-28T22:54:26.701Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 200
+[debug] [2023-01-28T22:54:26.701Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853 {"projectId":"chatroom-69853","projectNumber":"778752590260","displayName":"Chatroom","name":"projects/chatroom-69853","resources":{"hostingSite":"chatroom-69853","realtimeDatabaseInstance":"chatroom-69853-default-rtdb","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"},"state":"ACTIVE","etag":"1_8c1d6836-a22e-48fd-9a13-0373b73063cb"}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2023-01-28T22:54:26.718Z] defaultcredentials: writing to file /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json
+[debug] [2023-01-28T22:54:26.720Z] Setting GAC to /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/victoriathorkels/.config/firebase/victoriathorkels_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-28T22:54:26.721Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig [none]
+[debug] [2023-01-28T22:54:27.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig 200
+[debug] [2023-01-28T22:54:27.095Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatroom-69853/adminSdkConfig {"projectId":"chatroom-69853","databaseURL":"https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"chatroom-69853.appspot.com","locationId":"europe-west"}
+[info] i  functions: Watching "/Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions\" for Cloud Functions..."}}
+[debug] [2023-01-28T22:54:27.120Z] Validating nodejs source
+[debug] [2023-01-28T22:54:28.289Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "local": "firebase serve --only functions"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase": "^9.16.0",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-01-28T22:54:28.289Z] Building nodejs source
+[debug] [2023-01-28T22:54:28.291Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-01-28T22:54:28.419Z] Serving at port 9005
+
+[debug] [2023-01-28T22:54:28.428Z] Got response from /__/functions.yaml Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'
+Require stack:
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js
+[debug] [2023-01-28T22:54:28.430Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:
+     ... fest from function source: Error: Cannot find module 'firebase-a ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'\nRequire stack:\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js\n\u0000","position":55,"line":0,"column":55},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 56:\n     ... fest from function source: Error: Cannot find module 'firebase-a ... \n                                         ^"}
+[debug] [2023-01-28T22:54:28.431Z] shutdown requested via /__/quitquitquit
+
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'
+Require stack:
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js
+- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: Error: Cannot find module 'firebase-admin/auth'\nRequire stack:\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/common/providers/identity.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/providers/auth.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/v1/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/functions/index.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/runtime/loader.js\n- /Users/victoriathorkels/Desktop/VOR2023/mod5groupproject/chatterbox/node_modules/firebase-functions/lib/bin/firebase-functions.js"}}

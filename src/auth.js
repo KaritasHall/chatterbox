@@ -6,9 +6,10 @@ import "firebase/compat/firestore";
 import { initializeApp } from "firebase/app";
 import * as firebaseui from "firebaseui";
 import "./Auth.css";
+import tskoliTerminal from "./tskoliterminal.png";
 
 
-// Login is the prop with the use state in app.js
+//  Login is the prop with the use state in app.js
 export default function Auth({ login }) {
     const x=process.env.SECRET_KEY
     console.log(x)
@@ -36,9 +37,9 @@ export default function Auth({ login }) {
       callbacks: {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
           // User successfully signed in.
-          // Return type determines whether we continue the redirect automatically...
+          // Return type determines whether we continue the redirect automatically......
           // or whether we leave that to developer to handle.
-          // Here we're changing the state to true so when the user is logged in they get sent to chat
+          //  Here we're changing the state to true so when the user is logged in they get sent to chat
           login(true);
           return true;
         },
@@ -58,22 +59,21 @@ export default function Auth({ login }) {
     };
 
     // The start method will wait until the DOM is loaded.
-    ui.start("#firebaseui-auth-container",  uiConfig);
+    ui.start("#firebaseui-auth-container",   uiConfig);
   }, []);
 
   
+  
   return (
-    <div className="mainbox">
       <div className="box">
 
-        <h1>Tskóli Terminal</h1>
+        <img src={tskoliTerminal} alt="Tskoli Terminal logo"></img>
 
-        <div className="secondbox">
+        <div className="innerbox">
           <div id="firebaseui-auth-container"></div>
           <div id="loader">Loading...</div>
         </div>
 
       </div>
-    </div>
   );
 }
