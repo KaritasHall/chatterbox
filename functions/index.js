@@ -1,5 +1,5 @@
 const functions = require("firebase-functions");
-require ('dotenv').config();
+require("dotenv").config();
 // "firebase-functions" is specifically for Firebase's cloud hosting.
 
 const cors = require("cors");
@@ -30,11 +30,13 @@ expressApp.get("/", async (req, res) => {
     const messages = snapshot.docs.map((doc) => {
       return {
         id: doc.id,
+        createdAt: doc.createTime.seconds,
         ...doc.data(),
       };
     });
-
-    res.send(messages);
+    // Sorting message by time created
+    const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt);
+    res.send(sortedMessages);
   } catch (error) {
     console.log("get /", error);
     res.send(500, "Server error");
@@ -66,7 +68,7 @@ expressApp.post("/chat", async (req, res) => {
       });
     }
   } catch (error) {
-    console.log("post /", error);
+    console.log("post /chat", error);
     res.send(500, "Server error");
   }
 });
@@ -84,7 +86,7 @@ expressApp.delete("/chat/:id", async (req, res) => {
       res.status(404).send("chat not found");
     }
   } catch (error) {
-    console.log("delete /", error);
+    console.log("delete /chat/:id", error);
     res.send(500, "Server error");
   }
 });
@@ -118,14 +120,64 @@ expressApp.put("/chat/:id", async (req, res) => {
       }
     }
   } catch (error) {
-    console.log("delete /", error);
+    console.log("put /chat/:id", error);
     res.send(500, "Server error");
   }
 });
 
+// GET random cat fact
+expressApp.get("/cats", async (req, res) => {
+  try {
+    // First we get the record
+    const snapshot = await db.collection("cats").get();
+
+    // map through collection and get message by id and other properties
+    const cats = snapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+    // Making a variable that holds a random index
+    const randomIndex = Math.floor(Math.random() * cats.length);
+
+    const randomCatfact = cats[randomIndex].name;
+    // Add that as a message
+    const reference = await db.collection("messages").add({
+      name: randomCatfact,
+    });
+
+    // we use the reference to get a snapshot!
+    const messageSnapshot = await reference.get();
+
+    // send the firebase snapshot back to the client!
+    res.send({
+      id: messageSnapshot.id,
+      ...messageSnapshot.data(),
+    });
+
+    // send random cat fact :)
+    // res.send(cats[randomIndex]);
+  } catch (error) {
+    console.log("get /", error);
+    res.send(500, "Server error");
+  }
+});
 // Here we are asking express to handle crud operations and
 // send a response back to the user
 exports.app = functions.https.onRequest(expressApp);
+
+// This is a code we can use for letting people chat through the chatterbox but we dont know how to implement it right now so we're just keeping it here for future use
+// The link: https://firebase.google.com/docs/firestore/query-data/listen#node.js
+
+// const doc = db.collection('messages').doc('SF');
+
+// const observer = doc.onSnapshot(docSnapshot => {
+//   console.log(`Received doc snapshot: ${docSnapshot}`);
+//   // ...
+// }, err => {
+//   console.log(`Encountered error: ${err}`);
+// });
 
 // Firebase is controlling the port etc. behind the scenes.
 // You can think of Firebase as the bouncer of a club,
