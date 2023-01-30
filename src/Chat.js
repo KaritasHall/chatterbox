@@ -1,34 +1,51 @@
 import getServerUrl from "./config";
 import { useState, useEffect } from "react";
 import CatFacts from "./catfacts";
+import { collection, query, getFirestore, onSnapshot } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+
 
 export default function Chat() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
+    authDomain: "chatroom-69853.firebaseapp.com",
+    databaseURL:
+      "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "chatroom-69853",
+    storageBucket: "chatroom-69853.appspot.com",
+    messagingSenderId: "778752590260",
+    appId: "1:778752590260:web:874fb6b005663a514472e1",
+  };
+
+
   // DON'T ERASE THIS LINE
   // this is the server url (see config.js)
   const url = getServerUrl();
 
   //Fetching existing messages from database with GET method
   const [message, setMessage] = useState([]);
-
+  
   useEffect(() => {
-    const getData = async () => {
-      const messageBox = await fetch(url);
-      const data = await messageBox.json();
-      setMessage(data);
-      console.log(data);
-    };
-    // Using setInterval to fetch messages every 10s
-    const intervalId = setInterval(() => {
-      getData();
-    }, 10000);
-    // Cleanup with clearInterval
-    // It makes sure that the interval stops when the component is no longer running
-    // For example when the user closes the chat
+    //Getting real time updates for messages
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);  
+    const q = query(collection(db, "messages"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const messages = [];
+      querySnapshot.forEach((doc) => {
+          messages.push({id:doc.id,name:doc.data().name});
+      });
+      console.log("Message", messages.join(", "));
+      // setMessage([...message, { id: message.length, name: text }]);
+      setMessage(messages)
+    });
+
     return () => {
-      clearInterval(intervalId);
+      unsubscribe();
     };
   }, [url]);
-  //Adding a new messge with post method
+
+  //Adding a new message with post method
   const [text, setText] = useState("");
 
   let inputField = document.getElementById("inputField");
@@ -97,6 +114,8 @@ export default function Chat() {
       .then(console.log);
     editField.value = "";
   }
+
+
 
   const [showForm, setshowForm] = useState({});
 

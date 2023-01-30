@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Auth from "./Auth";
+import Auth from "./auth";
 import Chat from "./Chat";
 
 
