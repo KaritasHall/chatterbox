@@ -6,6 +6,7 @@ import "firebase/compat/firestore";
 import { initializeApp } from "firebase/app";
 import * as firebaseui from "firebaseui";
 import "./Auth.css";
+import tskoliTerminal from "./tskoliterminal.png";
 
 
 // Login is the prop with the use state in app.js
@@ -65,7 +66,7 @@ export default function Auth({ login }) {
   return (
       <div className="box">
 
-        <h1>Tskóli Terminal</h1>
+        <img src={tskoliTerminal} alt="Tskoli Terminal logo"></img>
 
         <div className="innerbox">
           <div id="firebaseui-auth-container"></div>
