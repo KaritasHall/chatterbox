@@ -163,21 +163,10 @@ expressApp.get("/cats", async (req, res) => {
     res.send(500, "Server error");
   }
 });
+
 // Here we are asking express to handle crud operations and
 // send a response back to the user
 exports.app = functions.https.onRequest(expressApp);
-
-// This is a code we can use for letting people chat through the chatterbox but we dont know how to implement it right now so we're just keeping it here for future use
-// The link: https://firebase.google.com/docs/firestore/query-data/listen#node.js
-
-// const doc = db.collection('messages').doc('SF');
-
-// const observer = doc.onSnapshot(docSnapshot => {
-//   console.log(`Received doc snapshot: ${docSnapshot}`);
-//   // ...
-// }, err => {
-//   console.log(`Encountered error: ${err}`);
-// });
 
 // Firebase is controlling the port etc. behind the scenes.
 // You can think of Firebase as the bouncer of a club,
