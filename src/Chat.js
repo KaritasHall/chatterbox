@@ -24,6 +24,7 @@ export default function Chat() {
   const url = getServerUrl();
 
   //Fetching existing messages from database with GET method
+  //Bypassing the server limits your freedom. Talking straight to the database with firebase library. Not using fetch. 
   const [message, setMessage] = useState([]);
   
   useEffect(() => {
@@ -31,29 +32,33 @@ export default function Chat() {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);  
     const q = query(collection(db, "messages"));
+    //OnSnapshot creates a websocket
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
       querySnapshot.forEach((doc) => {
-          messages.push({id:doc.id,name:doc.data().name});
+          messages.push({id:doc.id,...doc.data()});
       });
-      console.log("Message", messages.join(", "));
+      //Sorts the messages to newest on the bottom
+    const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt); 
+
+      console.log("Message", messages);
       // setMessage([...message, { id: message.length, name: text }]);
-      setMessage(messages)
+      setMessage(sortedMessages)
     });
 
     return () => {
       unsubscribe();
     };
-  }, [url]);
+  },[firebaseConfig]);
 
   //Adding a new message with post method
   const [text, setText] = useState("");
-
+  //these are used in javascriot but are not normally used in react - could use ref hook instead - worked here 
   let inputField = document.getElementById("inputField");
   let editField = document.getElementById("editField");
 
   const sendMsg = () => {
-    setMessage([...message, { id: message.length, name: text }]);
+    setMessage([...message, { id: message.length, name: text, createdAt: Date.now()}]);
     const bodyData = {
       message: text,
     };
@@ -75,8 +80,7 @@ export default function Chat() {
 
   function handleKeyPress(e) {
     console.log(e);
-    var key = e.key;
-    if (key === "Enter") {
+    if (e.key === "Enter") {
       sendBtn.click();
     }
   }
@@ -167,7 +171,7 @@ export default function Chat() {
       <input className="inputfield"
         id="inputField"
         onChange={(e) => setText(e.target.value)}
-        onKeyPress={(e) => handleKeyPress(e)}
+        onKeyDown={(e) => handleKeyPress(e)}
       ></input>
       <button id="sendBtn" onClick={sendMsg}>
         Send
