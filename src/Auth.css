@@ -24,11 +24,12 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
     padding-bottom: 30px;
-    padding-top: 10px;
-
+    padding-top: 0px;
 }
+
+
 
 /* "Tskóli Terminal" */
 /*h1 {
@@ -59,7 +60,7 @@ img {
 /* Auth. textfield and title */
 .firebaseui-card-content {
     border: none;
-    border-bottom: 2px solid #06f;
+    border-bottom: 2px solid #4DDFA3;
 }
     .innerbox {
         display: flex;
@@ -160,11 +161,11 @@ img {
     color: #171e29;
     }
     .firebaseui-button:hover {
-    border-color: #06f;
-    color: #06f;
+    border-color: #4DDFA3;
+    color: #4DDFA3;
     }
     .firebaseui-button:active {
-    border-color: #06f;
-    color: #06f;
+    border-color: #4DDFA3;
+    color: #4DDFA3;
     }
 

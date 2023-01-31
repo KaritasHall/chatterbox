@@ -69,7 +69,7 @@ export default function Auth({ login }) {
   return (
       <div className="box">
 
-        <img src={tskoliTerminal} alt="Tskoli Terminal logo"></img>
+        <img src={chatterBoxGreen} alt="Tskoli Terminal logo"></img>
 
         <div className="innerbox">
           <div id="firebaseui-auth-container"></div>
