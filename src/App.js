@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Auth from "./auth";
 import Chat from "./Chat";
-
 
 function App() {
   //Setting a state for the login - default state is false (not logged in)
@@ -16,4 +15,3 @@ function App() {
 }
 
 export default App;
-
