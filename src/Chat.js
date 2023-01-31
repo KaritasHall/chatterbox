@@ -187,7 +187,7 @@ export default function Chat() {
           onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => handleKeyPress(e)}
         ></input>
-        <button id="sendBtn" onClick={sendMsg}>
+        <button id="sendBtn" onClick={sendMsg} disabled={text.length === 0}>
           Send
         </button>
 
