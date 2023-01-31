@@ -1,5 +1,4 @@
 const functions = require("firebase-functions");
-require("dotenv").config();
 // "firebase-functions" is specifically for Firebase's cloud hosting.
 
 const cors = require("cors");
@@ -30,7 +29,6 @@ expressApp.get("/", async (req, res) => {
     const messages = snapshot.docs.map((doc) => {
       return {
         id: doc.id,
-        createdAt: doc.createTime.seconds,
         ...doc.data(),
       };
     });
@@ -56,7 +54,7 @@ expressApp.post("/chat", async (req, res) => {
       // save to firebase as a reference
       const reference = await db.collection("messages").add({
         name: message,
-        createdAt: Date.now()
+        createdAt: new Date().getTime(),
       });
 
       // we use the reference to get a snapshot!
@@ -146,7 +144,7 @@ expressApp.get("/cats", async (req, res) => {
     // Add that as a message
     const reference = await db.collection("messages").add({
       name: randomCatfact,
-      createdAt: Date.now()
+      createdAt: new Date().getTime(),
     });
 
     // we use the reference to get a snapshot!
