@@ -1,68 +1,122 @@
-body{
+body {
     background-color: #232323;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* Would be cool to have the logo here also if we have time not nessicery */
-.tterminal{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    color: rgb(130, 130, 130);
 
-}
-.messagecontainer{
-width: 80%;
-height: auto;
-margin-top: 1rem;
-margin-right: 4rem;
-margin-left: 4rem;
-margin-bottom: 1rem;
-padding: 2rem;
-justify-content: center;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+/* Frame around text and components to keep it in place */
+/*.messagecontainer {
+    width: 80%;
+    height: auto;
+    margin-top: 1rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}*/
+
+/* Frame around text and components to keep it in place */
+.messagecontainer {
+    height: 650px;
+    width: 430px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 45px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    border-radius: 24px;
 }
 
-.messagetxt{
+.messagetxt {
     color: white;
+    margin-bottom: 2px;
+    border: 1.5px solid rgb(69, 69, 69);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px 20px 20px 0px;
+    width: fit-content;
 }
 
-.inputfield{
+.inputfield {
     color: rgb(133, 133, 133);
     font-size: 16px;
-    width: 329px;
-    height: 20px;
+    width: 330px;
     text-decoration: none;
-    border: solid 1px #06f;
+    border: none;
+    padding-right: 5px;
+    margin-top: 30px;
+    margin-left: 0px;
+    padding-right: 30px;
 }
 
-#inputField{
+#inputField {
     height: 38px;
 }
 
-.deletebtn, .editbtn {
-    /* færa til hægri ? */
+.deletebtn {
     font-size: 12px;
+    padding-left: 0px;
+    padding-bottom: 10px;
     cursor: 'pointer';
     background-color: #232323;
     border: none;
     color: rgb(163, 163, 163);
-    justify-content:flex-start;
+    justify-content: flex-start;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.sending{
-    text-align: center;
-    margin-bottom: 2rem;
+.deletebtn:focus {
+    color: rgb(163, 163, 163);
+}
+    .savebtn:hover {
+        border-color: rgb(255, 45, 45);
+        color: rgb(255, 45, 45);
+    }
+    .savebtn:active {
+        border-color: rgb(255, 45, 45);
+        color: rgb(255, 45, 45);
+    }
+
+.editbtn {
+    font-size: 12px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    cursor: 'pointer';
+    background-color: #232323;
+    border: none;
+    color: rgb(163, 163, 163);
+    justify-content: flex-start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#sendBtn{
+.sending {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+#sendBtn {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #232323;
-    border: 2px solid white;
+    border: 1.5px solid white;
+    border-radius: 10px;
     box-sizing: border-box;
     color: white;
     font-size: 14px;
     text-transform: uppercase;
-    height: 38px;
+    height: 40px;
     width: auto;
     margin-top: 10px;
     cursor: pointer;
@@ -72,75 +126,97 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     margin-right: 6px;
     margin-left: 6px;
 }
-.catbtn{
+
+.catbtn {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #232323;
-    border: 2px solid white;
+    border: 1.5px solid white;
+    border-radius: 10px;
     box-sizing: border-box;
     color: white;
     font-size: 14px;
     text-transform: uppercase;
-    height: 38px;
+    height: 40px;
     width: auto;
     margin-top: 10px;
     cursor: pointer;
     text-decoration: none;
     transition: all .3s;
     touch-action: manipulation;
+    margin-right: 6px;
+    margin-left: 6px;
 }
 
-.savebtn{
+.savebtn {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #232323;
-    border: 2px solid white;
+    border: 1.5px solid white;
+    border-radius: 10px;
     box-sizing: border-box;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    height: auto;
-    width: auto;
     margin-top: 10px;
+    height: 40px;
+    width: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
     cursor: pointer;
     text-decoration: none;
     transition: all .3s;
     touch-action: manipulation;
-    margin-left: 3px;
+    margin-right: 6px;
+    margin-left: 6px;
 }
+
+#editField {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: rgb(133, 133, 133);
+    font-size: 16px;
+    width: 323px;
+    text-decoration: none;
+    border: none;
+    padding-right: 5px;
+    margin-top: 30px;
+    margin-left: 0px;
+    padding-right: 30px;
+}
+
 #sendBtn:focus {
-    color: #171e29;
-    }
+    color: #fff;
+}
     #sendBtn:hover {
-    border-color: #06f;
-    color: #06f;
+    border-color: #4DDFA3;
+    color: #4DDFA3;
     }
     #sendBtn:active {
-    border-color: #06f;
-    color: #06f;
+    border-color: #4DDFA3;
+    color: #4DDFA3;
     }
 
 .catbtn:focus {
-    color: #171e29;
-    }
+    color: #fff;
+}
     .catbtn:hover {
-    border-color: #06f;
-    color: #06f;
+        border-color: rgb(41, 127, 255);
+        color: rgb(41, 127, 255);
     }
     .catbtn:active {
-    border-color: #06f;
-    color: #06f;
+        border-color: rgb(41, 127, 255);
+        color: rgb(41, 127, 255);
     }
 
 .savebtn:focus {
-    color: #171e29;
-    }
+    color: #fff;
+}
     .savebtn:hover {
-    border-color: #06f;
-    color: #06f;
+        border-color: rgb(255, 111, 207);
+        color: rgb(255, 111, 207);
     }
     .savebtn:active {
-    border-color: #06f;
-    color: #06f;
-        }
-        
-     
-
+        border-color: rgb(255, 111, 207);
+        color: rgb(255, 111, 207);
+    }

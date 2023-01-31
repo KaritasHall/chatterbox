@@ -19,26 +19,15 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* Tskoliterminal logo */
+/* Chatterbox logo */
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
     padding-bottom: 30px;
-    padding-top: 0px;
+    padding-top: 10px;
 }
-
-
-
-/* "Tskóli Terminal" */
-/*h1 {
-    text-align: center;
-    font-size: 38px;
-    color: white;
-    font-weight: 400;
-    text-transform: uppercase;
-}*/
 
 /* Container around everything auth. */
 #firebaseui-auth-container {
