@@ -7,6 +7,8 @@ import { initializeApp } from "firebase/app";
 import * as firebaseui from "firebaseui";
 import "./Auth.css";
 import tskoliTerminal from "./tskoliterminal.png";
+import chatterBox from "./chatterbox.png";
+import chatterBoxGreen from "./chatterboxgreen.png";
 
 
 //  Login is the prop with the use state in app.js
