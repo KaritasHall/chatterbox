@@ -1,34 +1,29 @@
-import { useState, useEffect } from "react";
-import { getDefaultNormalizer } from "@testing-library/react";
+import { useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { initializeApp } from "firebase/app";
 import * as firebaseui from "firebaseui";
 import "./Auth.css";
-import tskoliTerminal from "./tskoliterminal.png";
-import chatterBox from "./chatterbox.png";
 import chatterBoxGreen from "./chatterboxgreen.png";
-
 
 //  Login is the prop with the use state in app.js
 export default function Auth({ login }) {
-    const x=process.env.SECRET_KEY
-    console.log(x)
-    console.log(process.env)
+  const x = process.env.SECRET_KEY;
+  console.log(x);
+  console.log(process.env);
   // TODO: Replace the following with your app's Firebase project configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
-    authDomain: "chatroom-69853.firebaseapp.com",
-    databaseURL:
-      "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "chatroom-69853",
-    storageBucket: "chatroom-69853.appspot.com",
-    messagingSenderId: "778752590260",
-    appId: "1:778752590260:web:874fb6b005663a514472e1",
-  };
 
   useEffect(() => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
+      authDomain: "chatroom-69853.firebaseapp.com",
+      databaseURL:
+        "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "chatroom-69853",
+      storageBucket: "chatroom-69853.appspot.com",
+      messagingSenderId: "778752590260",
+      appId: "1:778752590260:web:874fb6b005663a514472e1",
+    };
     firebase.initializeApp(firebaseConfig);
     // Initialize the FirebaseUI Widget using Firebase.
     const ui =
@@ -61,21 +56,17 @@ export default function Auth({ login }) {
     };
 
     // The start method will wait until the DOM is loaded.
-    ui.start("#firebaseui-auth-container",   uiConfig);
-  }, []);
+    ui.start("#firebaseui-auth-container", uiConfig);
+  }, [login]);
 
-  
-  
   return (
-      <div className="box">
+    <div className="box">
+      <img src={chatterBoxGreen} alt="Tskoli Terminal logo"></img>
 
-        <img src={chatterBoxGreen} alt="Tskoli Terminal logo"></img>
-
-        <div className="innerbox">
-          <div id="firebaseui-auth-container"></div>
-          <div id="loader">Loading...</div>
-        </div>
-
+      <div className="innerbox">
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
       </div>
+    </div>
   );
 }
