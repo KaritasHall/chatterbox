@@ -56,6 +56,7 @@ expressApp.post("/chat", async (req, res) => {
       // save to firebase as a reference
       const reference = await db.collection("messages").add({
         name: message,
+        createdAt: Date.now()
       });
 
       // we use the reference to get a snapshot!
@@ -145,6 +146,7 @@ expressApp.get("/cats", async (req, res) => {
     // Add that as a message
     const reference = await db.collection("messages").add({
       name: randomCatfact,
+      createdAt: Date.now()
     });
 
     // we use the reference to get a snapshot!
