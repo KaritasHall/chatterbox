@@ -2,64 +2,70 @@ import "./Chat.css";
 import getServerUrl from "./config";
 import { useState, useEffect } from "react";
 import CatFacts from "./catfacts";
-import { collection, query, getFirestore, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  query,
+  getFirestore,
+  onSnapshot,
+} from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
+// Hæ this is a random test
 
 export default function Chat() {
-
-
-
   // DON'T ERASE THIS LINE
   // this is the server url (see config.js)
   const url = getServerUrl();
 
   //Fetching existing messages from database with GET method
-  //Bypassing the server limits your freedom. Talking straight to the database with firebase library. Not using fetch. 
+  //Bypassing the server limits your freedom. Talking straight to the database with firebase library. Not using fetch.
   const [message, setMessage] = useState([]);
-  
+
   useEffect(() => {
-      const firebaseConfig = {
-    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
-    authDomain: "chatroom-69853.firebaseapp.com",
-    databaseURL:
-      "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "chatroom-69853",
-    storageBucket: "chatroom-69853.appspot.com",
-    messagingSenderId: "778752590260",
-    appId: "1:778752590260:web:874fb6b005663a514472e1",
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
+      authDomain: "chatroom-69853.firebaseapp.com",
+      databaseURL:
+        "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "chatroom-69853",
+      storageBucket: "chatroom-69853.appspot.com",
+      messagingSenderId: "778752590260",
+      appId: "1:778752590260:web:874fb6b005663a514472e1",
+    };
     //Getting real time updates for messages
     const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);  
+    const db = getFirestore(app);
     const q = query(collection(db, "messages"));
     //OnSnapshot creates a websocket
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
       querySnapshot.forEach((doc) => {
-          messages.push({id:doc.id,...doc.data()});
+        messages.push({ id: doc.id, ...doc.data() });
       });
       //Sorts the messages to newest on the bottom
-      const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt); 
+      const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt);
 
-      console.log("Message", messages);
+      console.log("The Message", messages);
       // setMessage([...message, { id: message.length, name: text }]);
-      setMessage(sortedMessages)
+      setMessage(sortedMessages);
     });
 
     return () => {
       unsubscribe();
     };
-  },[]);
+  }, []);
 
   //Adding a new message with post method
   const [text, setText] = useState("");
-  //these are used in javascriot but are not normally used in react - could use ref hook instead - worked here 
+  //these are used in javascriot but are not normally used in react - could use ref hook instead - worked here
   let inputField = document.getElementById("inputField");
   let editField = document.getElementById("editField");
 
   const sendMsg = () => {
-    setMessage([...message, { id: message.length, name: text, createdAt: Date.now()}]);
+    setMessage([
+      ...message,
+      { id: message.length, name: text, createdAt: Date.now() },
+    ]);
     const bodyData = {
       message: text,
     };
@@ -121,12 +127,9 @@ export default function Chat() {
     editField.value = "";
   }
 
-
-
   const [showForm, setshowForm] = useState({});
 
   return (
-    
     <div className="maincontainer">
       <h1 className="tterminal">Tskóli Terminal</h1>
       <div className="messagecontainer">
@@ -136,11 +139,15 @@ export default function Chat() {
               <div>
                 <p className="messagetxt">{chatMessage.name}</p>
               </div>
-              <button className="deletebtn" onClick={() => deleteMsg(chatMessage.id, i)}>
+              <button
+                className="deletebtn"
+                onClick={() => deleteMsg(chatMessage.id, i)}
+              >
                 Delete
               </button>
 
-              <button className="editbtn"
+              <button
+                className="editbtn"
                 onClick={() =>
                   setshowForm({
                     ...showForm,
@@ -153,11 +160,15 @@ export default function Chat() {
               <div>
                 {showForm[chatMessage.id] ? (
                   <div>
-                    <input className="inputfield"
+                    <input
+                      className="inputfield"
                       id="editField"
                       onChange={(e) => setText(e.target.value)}
                     ></input>
-                    <button className="savebtn" onClick={(e) => editMsg(e, chatMessage.id, i)}>
+                    <button
+                      className="savebtn"
+                      onClick={(e) => editMsg(e, chatMessage.id, i)}
+                    >
                       Save
                     </button>
                   </div>
@@ -169,16 +180,17 @@ export default function Chat() {
       </div>
 
       <div className="sending">
-      <input className="inputfield"
-        id="inputField"
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={(e) => handleKeyPress(e)}
-      ></input>
-      <button id="sendBtn" onClick={sendMsg}>
-        Send
-      </button>
+        <input
+          className="inputfield"
+          id="inputField"
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => handleKeyPress(e)}
+        ></input>
+        <button id="sendBtn" onClick={sendMsg}>
+          Send
+        </button>
 
-      <CatFacts />
+        <CatFacts />
       </div>
     </div>
   );
