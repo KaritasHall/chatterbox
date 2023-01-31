@@ -80,6 +80,7 @@ export default function Chat() {
       .then((r) => r.json())
       .then(console.log);
     inputField.value = "";
+    setText("");
   };
 
   //This makes the enter btn press send - on keypress and handekeypress is also on the input field so they communicate
