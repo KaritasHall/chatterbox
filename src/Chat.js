@@ -7,16 +7,7 @@ import { initializeApp } from "firebase/app";
 
 
 export default function Chat() {
-  const firebaseConfig = {
-    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
-    authDomain: "chatroom-69853.firebaseapp.com",
-    databaseURL:
-      "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "chatroom-69853",
-    storageBucket: "chatroom-69853.appspot.com",
-    messagingSenderId: "778752590260",
-    appId: "1:778752590260:web:874fb6b005663a514472e1",
-  };
+
 
 
   // DON'T ERASE THIS LINE
@@ -28,6 +19,16 @@ export default function Chat() {
   const [message, setMessage] = useState([]);
   
   useEffect(() => {
+      const firebaseConfig = {
+    apiKey: "AIzaSyDrXVF6xm2SOs1fsgf_cUj6jSSriqlsG9g",
+    authDomain: "chatroom-69853.firebaseapp.com",
+    databaseURL:
+      "https://chatroom-69853-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "chatroom-69853",
+    storageBucket: "chatroom-69853.appspot.com",
+    messagingSenderId: "778752590260",
+    appId: "1:778752590260:web:874fb6b005663a514472e1",
+  };
     //Getting real time updates for messages
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);  
@@ -39,7 +40,7 @@ export default function Chat() {
           messages.push({id:doc.id,...doc.data()});
       });
       //Sorts the messages to newest on the bottom
-    const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt); 
+      const sortedMessages = messages.sort((a, b) => a.createdAt - b.createdAt); 
 
       console.log("Message", messages);
       // setMessage([...message, { id: message.length, name: text }]);
@@ -49,7 +50,7 @@ export default function Chat() {
     return () => {
       unsubscribe();
     };
-  },[firebaseConfig]);
+  },[]);
 
   //Adding a new message with post method
   const [text, setText] = useState("");
