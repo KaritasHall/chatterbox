@@ -37,7 +37,7 @@ expressApp.get("/", async (req, res) => {
     res.send(sortedMessages);
   } catch (error) {
     console.log("get /", error);
-    res.send(500, "Server error");
+    res.status(500).send({ error: "Server error! Try again later." });
   }
 });
 
@@ -48,7 +48,7 @@ expressApp.post("/chat", async (req, res) => {
     // If they do, they will get an error back
     const message = req.body.message;
     if (message.length === 0) {
-      res.send(400, "Message can not be empty");
+      res.status(400).send({ error: "Message can not be empty" });
       // If message is ok then we:
     } else {
       // save to firebase as a reference
@@ -68,7 +68,7 @@ expressApp.post("/chat", async (req, res) => {
     }
   } catch (error) {
     console.log("post /chat", error);
-    res.send(500, "Server error");
+    res.status(500).send({ error: "Server error! Try again later." });
   }
 });
 
@@ -82,11 +82,11 @@ expressApp.delete("/chat/:id", async (req, res) => {
       await db.collection("messages").doc(req.params.id).delete();
       res.send({ message: "Message deleted!" });
     } else {
-      res.status(404).send("chat not found");
+      res.status(404).send({ error: "chat not found" });
     }
   } catch (error) {
     console.log("delete /chat/:id", error);
-    res.send(500, "Server error");
+    res.status(500).send({ error: "Server error! Try again later." });
   }
 });
 
@@ -97,7 +97,8 @@ expressApp.put("/chat/:id", async (req, res) => {
     // So first we check if message is empty
     const message = req.body.message;
     if (message.length === 0) {
-      res.send(400, "Message can not be empty");
+      res.status(400).send({ error: "Message can not be empty" });
+      // res.send(400, JSON.stringify({ error: "Message can not be empty" }));
     } else {
       // If message is not empty then we check for matching id
       const reference = await db
@@ -115,12 +116,13 @@ expressApp.put("/chat/:id", async (req, res) => {
         });
         // If unsuccessful send error
       } else {
-        res.status(404).send("Couldn't edit message");
+        res.status(404).send({ error: "Couldn't edit message" });
+        // res.status(404).send("Couldn't edit message");
       }
     }
   } catch (error) {
     console.log("put /chat/:id", error);
-    res.send(500, "Server error");
+    res.status(500).send({ error: "Server error! Try again later." });
   }
 });
 
@@ -160,7 +162,7 @@ expressApp.get("/cats", async (req, res) => {
     // res.send(cats[randomIndex]);
   } catch (error) {
     console.log("get /", error);
-    res.send(500, "Server error");
+    res.status(500).send({ error: "Server error! Try again later." });
   }
 });
 
