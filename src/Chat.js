@@ -78,8 +78,9 @@ export default function Chat() {
         accept: "application/json",
       },
     })
-      .then((r) => r.json())
-      .then(console.log);
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
     inputField.value = "";
     setText("");
   };
@@ -102,8 +103,9 @@ export default function Chat() {
     fetch(url + "chat/" + id, {
       method: "DELETE",
     })
-      .then((r) => r.json())
-      .then(console.log);
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   }
 
   //Editing messages
@@ -124,8 +126,9 @@ export default function Chat() {
         accept: "application/json",
       },
     })
-      .then((r) => r.json())
-      .then(console.log);
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
     editField.value = "";
   }
 
