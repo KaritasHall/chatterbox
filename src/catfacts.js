@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import getServerUrl from "./config";
+import "./Catfacts.css";
 
 export default function CatFacts() {
   const url = getServerUrl();
@@ -11,9 +12,11 @@ export default function CatFacts() {
       .catch((err) => console.error(err));
   }, [url]);
 
+
   return (
     <button className="catbtn" onClick={getCats}>
       Post a random cat fact!
     </button>
   );
+
 }

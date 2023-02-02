@@ -9,6 +9,7 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
+import chatterBoxGreen from "./chatterboxgreen.png";
 
 // Hæ this is a random test
 
@@ -131,12 +132,19 @@ export default function Chat() {
     editField.value = "";
   }
 
+  const el = document.getElementById('messagecontainer');
+  // id of the chat container ---------- ^^^
+  if (el) {
+    el.scrollTop = el.scrollHeight;
+  }
+
+
   const [showForm, setshowForm] = useState({});
 
   return (
     <div className="maincontainer">
-      <h1 className="tterminal">Tskóli Terminal</h1>
       <div className="messagecontainer">
+      <img src={chatterBoxGreen} alt="Chatterbox logo"></img>
         {message.map((chatMessage, i) => {
           return (
             <div key={chatMessage.id}>
@@ -181,7 +189,7 @@ export default function Chat() {
             </div>
           );
         })}
-      </div>
+      
 
       <div className="sending">
         <input
@@ -195,6 +203,7 @@ export default function Chat() {
         </button>
 
         <CatFacts />
+      </div>
       </div>
     </div>
   );

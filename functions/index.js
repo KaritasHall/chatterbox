@@ -142,7 +142,7 @@ expressApp.get("/cats", async (req, res) => {
     // Making a variable that holds a random index
     const randomIndex = Math.floor(Math.random() * cats.length);
 
-    const randomCatfact = cats[randomIndex].name;
+    const randomCatfact = cats[randomIndex].fact;
     // Add that as a message
     const reference = await db.collection("messages").add({
       name: randomCatfact,
